@@ -1,0 +1,361 @@
+/*===============左边导航样式==============*/
+.b_left {
+  width: auto;
+  float: left;
+  margin-right: 30px;
+  margin-top:82px;
+  z-index: 105;
+ 
+}
+.titleText{
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.b_left #left_list {
+  padding-right: 0px;
+  padding-left: 0px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-align: left;
+  height: auto;
+  font-size: 16px;
+}
+.b_left #left_list  ul li{
+  list-style: none;
+  margin: 2px 0px 3px;
+  line-height: 18px;
+
+}
+.b_left #left_list li a {
+  text-decoration: none;
+  color: #858585;
+  cursor: pointer;
+  display: inline-block;
+  padding: 6px 15px 6px 0px;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.b_left #left_list li a:hover {
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+}
+.b_left #left_list .left_list_common {
+  width: 100%;
+  height: 40px;
+  padding-left: 20px;
+  margin-right: 20px;
+  font-family: microsoft yahei;
+  letter-spacing: 2px;
+  line-height: 40px;
+}
+.b_left #left_list .left_list_title {
+  width: 100%;
+  height: 40px;
+  padding-left: 20px;
+  margin-right: 20px;
+  font-family: microsoft yahei;
+  letter-spacing: 2px;
+  line-height: 40px;
+  background-color: #fff;
+}
+
+.b_left #left_list .unselectable {
+  width: 100%;
+  height: 40px;
+  padding-left: 20px;
+  margin-right: 20px;
+  font-family: microsoft yahei;
+  letter-spacing: 2px;
+  line-height: 40px;
+  color: #c3c1c1;
+  border-bottom: 1px dashed #ccc;
+}
+.active a {
+  font-weight: 700;
+  color: #222!important;
+}
+.active a span {
+  color: #007e50!important;
+  line-height: 40px!important;
+}
+.a_line {
+  position: relative;
+  bottom: 3px;
+  color: #999;
+  font-weight: bold;
+  font-size: 8px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+/*===============report导航样式==============*/
+.main_nav3_left_report {
+  float: left;
+  display: block;
+  line-height: 53px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.main_nav3_left_report a {
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+.main_nav3_left_report a:hover {
+  text-decoration: none;
+  color: #eeeeee;
+  cursor: pointer;
+}
+.main_nav3_left_report li {
+  z-index: 100;
+  float: left;
+  font-size: 14px;
+  padding-right: 5px;
+  padding-left: 5px;
+  letter-spacing: 1px;
+}
+.main_nav3_left_report li span {
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  background: #0379e7;
+  padding: 3px 15px;
+  border: 1px solid #0379e7;
+}
+.main_nav3_right_report {
+  float: right;
+  display: block;
+  line-height: 53px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.main_nav3_right_report a {
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+.main_nav3_right_report a:hover {
+  text-decoration: none;
+  color: #eeeeee;
+  cursor: pointer;
+}
+.main_nav3_right_report li {
+  z-index: 100;
+  margin-left: 13px;
+  float: left;
+  font-size: 14px;
+  padding-right: 5px;
+  padding-left: 5px;
+  letter-spacing: 1px;
+}
+.main_nav3_right_report li span {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+.main_nav3_right_report .report_success span {
+  background-color: #0379e7;
+  border: 1px solid #0379e7;
+}
+.main_nav3_right_report .report_running span {
+  background-color: #32ae4e ;
+  border: 1px solid #32ae4e ;
+}
+.main_nav3_right_report .report_end span {
+  background-color: #ec5743 ;
+  border: 1px solid #ec5743 ;
+}
+.b_right {
+  margin-left: 220px;
+  float: left;
+  padding: 65px 0px 0px 35px;
+  border-left: 3px solid #ddd;
+
+  /*注释*/
+  /*图片*/
+}
+.b_right .r_part_box {
+  float: left;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.b_right .r_part_box .first_title {
+  padding-top: 0px;
+}
+.b_right .r_part_box .first_title img {
+  margin-right: 10px;
+}
+.b_right h2,
+.b_right h3 {
+  color: #222;
+  font-family: "Microsoft YaHei UI";
+}
+.b_right h2 {
+  text-align: left;
+  font-size: 18px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  line-height: 20px;
+  font-weight: bold;
+}
+.b_right h2 img {
+  width: 22px;
+}
+.b_right h3 {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.b_right p {
+  text-align: left;
+  font-size: 14px !important;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.b_right .table_title {
+  padding: 25px 0px 25px 0px;
+  font-weight: bold;
+}
+.b_right table th {
+  text-align: center!important;
+}
+.b_right .annotation {
+  margin-top: 25px;
+}
+.b_right .annotation p {
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  line-height: 16px!important;
+  font-size: 14px !important;
+}
+.b_right .img_box {
+  text-align: center!important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.b_right .img_box .img-style {
+  margin-bottom: 10px;
+  max-width: 100%;
+  max-height: 400px;
+}
+.b_right .img_box p {
+  color: #333!important;
+  text-align: center!important;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.b_right .table_basic th {
+  text-align: center!important;
+  border-top: 1px solid #111!important;
+  border-bottom: 0px solid #fff!important;
+}
+.t_bottom_style {
+  border-bottom: 1px solid #111!important;
+}
+.hide_box {
+  float: left;
+}
+.chartBox {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+.chartBox a {
+  outline: none;
+}
+.chartBox a img {
+  border: 1px solid #BBB;
+  padding: 2px;
+  margin: 25px;
+  width: 450px;
+  max-height: 450px;
+}
+.chartBox a img.last {
+  margin-right: 0;
+}
+.chartBox .p_center {
+  text-align: center;
+}
+.chartBox ul {
+  margin-bottom: 24px;
+  padding-left: 30px;
+}
+.chartBox ul li {
+  width: 480px;
+  height: 480px;
+}
+fieldset,
+img {
+  border: 0;
+}
+.clear {
+  clear: both;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+}
+:focus {
+  outline: none;
+}
+.custom-container {
+  text-align: center;
+}
+.chartTitle {
+  text-align: center;
+  margin-bottom: 5px;
+  color: #666;
+}
+.paragraph {
+  line-height: 1.5;
+  text-indent: 2em;
+}
+p.noindent {
+  text-indent: 0em;
+}
+p.tremark {
+  font-size: 0.8em;
+  line-height: 2;
+  margin-left: 2em;
+  text-indent: 0em;
+}
+p.premark {
+  font-size: 0.8em;
+  line-height: 1.5;
+  margin-left: 4em;
+  margin-right: 4em;
+  text-align: center;
+}
+.parahalf {
+  line-height: 50%;
+  text-indent: 0em;
+}
+.reference {
+  line-height: 1.5;
+  text-indent: 0em;
+}
+.smallpic {
+  width: 180px;
+}
+.b_right .titleBox p{
+ padding-top:20px;
+  font-weight: 700;
+  color: #222!important;
+  font-size: 28px!important;
+  text-align: center;
+}
+.footerstyle p{
+  text-align: center;
+}

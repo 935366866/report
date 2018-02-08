@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<title>报告</title>
+	<link rel="stylesheet" type="text/css" href="css/new_common.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+	<link rel="stylesheet" href="css/report.css" >
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!--导入datatable-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+	<script type="text/javascript" charset="utf8" src="js/jquery.dataTables.js"></script>	
+	<!--导入图标-->
+	<!--导入轮播图-->
+	<!-- fancybox相关 tu -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css" media="screen" />
+	<script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+	<!--导入轮播图-->
+	<!-- jCarouselLite相关 tu -->
+	<link href="css/style-demo.css" type="text/css" rel="stylesheet" />
+	<script src="js/jquery.mousewheel-3.1.12.js"></script>
+	<script src="js/jquery.jcarousellite.min.js"></script>	
+	<!--流程图 gojs-->
+	<script src="js/go.js"></script>	
+	<script src="js/FI_common.js"></script>
+	<script src="js/report.js"></script>
+	<style>
+		pre{
+			white-space: pre-wrap;       /* css-3 */
+			white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+			white-space: -pre-wrap;      /* Opera 4-6 */
+			white-space: -o-pre-wrap;    /* Opera 7 */
+			word-wrap: break-word;       /* Internet Explorer 5.5+ */
+		}
+	</style>
+</head>
+<body style="background:#fff;">
+	<!--这个任务的id-->
+	<input style="display:none;" id="taskId" />
+	<!-- 图的名称 -->
+	<script>
+	var p_n=["mouseWheelButtons_qc1","mouseWheelButtons_qc2","mouseWheelButtons_qc3","mouseWheelButtons_adqc1","mouseWheelButtons_adqc2","mouseWheelButtons_adqc3",,"mouseWheelButtons_assemble1","mouseWheelButtons_assemble2","mouseWheelButtons_as1","mouseWheelButtons_as2","mouseWheelButtons_diff1","mouseWheelButtons_diff2","mouseWheelButtons_diff3","mouseWheelButtons_diff4","mouseWheelButtons_go1","mouseWheelButtons_go2","mouseWheelButtons_kegg1","mouseWheelButtons_kegg2","mouseWheelButtons_ppi1","mouseWheelButtons_ppi2",]
+</script>
+	<!--导航条-->
+	<div class="top" style="float:left;width:100%;">	
+	</div>	
+	<!--页面主体-->
+	<div id="main_box">
+		<div style="float:left;width:100%;">
+			<div id="content1" class="change_box">
+				<!--左边导航-->
+				<div class="b_left" style="position: fixed;">
+					<div id="left_list">
+						<ul>
+							<h3 class="titleText">CATEGORIES </h3>
+				<li class="selectable"><a href="#part1">分析模块导图</a></li>
+                <li class="selectable"><a href="#part0">任务参数</a></li>
+
+                <li class="selectable"><a href="#partQC">基本数据QC</a></li>
+
+<li class="selectable"><a href="#partADQC">高级数据QC</a></li>
+
+<li class="selectable"><a href="#partSNP">SNP和InDel检测</a></li>
+
+<li class="selectable"><a href="#partASSEMBLE">转录本组装</a></li>
+
+<li class="selectable"><a href="#partAS">可变剪接分析</a></li>
+
+<li class="selectable"><a href="#partDIFF">基因表达分析</a></li>
+
+<li class="selectable"><a href="#partGO">GO富集分析</a></li>
+
+<li class="selectable"><a href="#partKEGG">KEGG富集分析</a></li>
+
+<li class="selectable"><a href="#partPPI">PPI互作网络分析</a></li>
+
+                <li class="selectable"><a href="#partREF">参考文献</a></li> 
+
+						</ul>
+			</div>
+		</div>	
+		<!--右边报告-->
+                <div class="b_right" style="width:960px;">
+                    <!-- ===================================================================== -->
+                    <div class="titleBox">
+                        <p>真核有参转录组测序</p>
+                    </div>
+ 		<div id="part1" class="r_part_box">
+                <div class="first_title">
+                    <h2><img  src="img/report_01.png" alt="">分析模块导图</h2>
+                </div>
+                <!--流程图的div  -->
+                <div id="myDiagramDiv" style="background:#fff">
+                </div>
+			</div>
+<li class="selectable"><a href="#part0">任务参数</a></li>
+<div id="part0" class="r_part_box"> 
+    <div class="first_title"> 
+        <h2><img  src="img/report_01.png" alt="">任务参数</h2> 
+    </div> 
+<pre>
+开始于Wed Jan 24 11:59:01 2018，结束于Wed Jan 24 13:22:39 2018 
+<b>任务名称</b>：atdga
+<b>所属项目</b>：jiaenchaotest
+<b>任务目录</b>：/project/home/scmzcaxl1506241639/t0122v1
+<b>链特异性文库</b>：NO
+<b>测序类型</b>：PE
+<b>参考文件</b>：
+  fa: /database/Reference/Plant/Oryza_sativa/Oryza_sativa.IRGSP-1.0.26.dna.toplevel.fa
+  gtf: /project/home/scmzcaxl1506241639/t0122v1/REFERENCE/Oryza_sativa.IRGSP-1.0.26.exon.gtf
+  gff: /database/Reference/Plant/Oryza_sativa/Oryza_sativa.IRGSP-1.0.33.trans.gtf.mRNA.clean.gff3
+  genename: /database/Reference/Plant/Oryza_sativa/geneName.txt
+  go: /database/Reference/Plant/Oryza_sativa/go.txt
+  ppi: 39947
+  abbr: osa
+<b>数据目录</b>：
+  ck: /project/home/scmzcaxl1506241639/data/osa/ck_1.fq.gz, /project/home/scmzcaxl1506241639/data/osa/ck_2.fq.gz
+  wll: /project/home/scmzcaxl1506241639/data/osa/wll_1.fq.gz, /project/home/scmzcaxl1506241639/data/osa/wll_2.fq.gz
+<b>样本</b>：ck, wll
+<b>分组</b>：
+  ck: ck
+  wll: wll
+<b>比较</b>：
+  wllck: wll, ck
+<b>DE参数</b>：
+  foldchange: 2
+  species: Oryza_sativa_Japonica
+  taskName: atdga
+  qval: 0.05
+  projectName: jiaenchaotest
+  projectDir: /project/home/scmzcaxl1506241639/t0122v1
+  taskID: E203D047-6B3F-AE35-DAE2-8F6384FF8059
+</pre>
+<!--
+    <p>KEGG参数：OrderedDict([(u&#39;foldchange&#39;, u&#39;2&#39;), (u&#39;species&#39;, u&#39;Oryza_sativa_Japonica&#39;), (u&#39;taskName&#39;, u&#39;atdga&#39;), (u&#39;qval&#39;, u&#39;0.05&#39;), (u&#39;projectName&#39;, u&#39;jiaenchaotest&#39;), (u&#39;projectDir&#39;, u&#39;/project/home/scmzcaxl1506241639/t0122v1&#39;), (u&#39;taskID&#39;, u&#39;E203D047-6B3F-AE35-DAE2-8F6384FF8059&#39;)])</p>
+    <p>PPI参数：OrderedDict([(u&#39;foldchange&#39;, u&#39;2&#39;), (u&#39;species&#39;, u&#39;Oryza_sativa_Japonica&#39;), (u&#39;taskName&#39;, u&#39;atdga&#39;), (u&#39;qval&#39;, u&#39;0.05&#39;), (u&#39;projectName&#39;, u&#39;jiaenchaotest&#39;), (u&#39;projectDir&#39;, u&#39;/project/home/scmzcaxl1506241639/t0122v1&#39;), (u&#39;taskID&#39;, u&#39;E203D047-6B3F-AE35-DAE2-8F6384FF8059&#39;)])</p>
+//-->
+</div> 
+
+
+			<div id="partQC" class="r_part_box">
+                <div class="first_title">
+                	<h2><img  src="img/report_01.png" alt="">基本数据QC</h2>
+                </div>
+                <h3>1.测序质量分析</h3>
+				<p class="indent">Illumina高通量测序平台 (HiSeq/MiSeq/NovaSeq) 的碱基质量值用Phred quality score表示。测序仪在碱基识别时，会给出每个碱基错误识别的概率P，碱基的Phred quality score则为-10log<sub>10</sub>P，如某个碱基的错误识别的概率为0.001，则其质量值为30，对应关系如下：</p>
+                <div class="t_bottom_style">
+					<table class="display table_basic" >
+						<thead>
+							<tr>
+								<th>Phred质量值</th>
+								<th>碱基错误识别概率</th>
+								<th>碱基正确识别概率</th>
+								<th>通常简称</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>10</td>
+								<td>1/10</td>
+								<td>90%</td>
+								<td>Q10</td>
+							</tr>
+							<tr class="even">
+								<td>20</td>
+								<td>1/100</td>
+								<td>99%</td>
+								<td>Q20</td>
+							</tr>
+							<tr>
+								<td>30</td>
+								<td>1/1000</td>
+								<td>99.9%</td>
+								<td>Q30</td>
+							</tr>
+							<tr class="even">
+								<td>40</td>
+								<td>1/10000</td>
+								<td>99.99%</td>
+								<td>Q40</td>
+							</tr>
+						</tbody>
+					</table>
+                    </div>
+					<p class="indent">由于测序平台和测序原理本身的限制，测序质量值会随着Reads从5'到3'端逐渐降低。主要是由于酶和试剂的消耗导致的，另外，phasing (即一轮循环中没有加入碱基) 和prephasing (即一轮循环中加入2个以上碱基) 也是一个重要因素。且5'端最开始几个碱基质量一般也比较低。</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_qc1" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class="qc001">
+									<li><a rel="err" id="examplex" href='./pictures/ck_quality.png' title="横坐标为碱基位置，纵坐标为该位置碱基的平均质量值。"><img src='./pictures/ck_quality.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="err" id="examplex" href='./pictures/wll_quality.png' title="横坐标为碱基位置，纵坐标为该位置碱基的平均质量值。"><img src='./pictures/wll_quality.png' class="smallpic" alt="" description="" /></a></li>        
+								</ul>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="qc001">1</span>/2 测序数据质量值分布 </p>
+                            </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 
+				<h3>2.碱基含量分布</h3>
+				<p class="indent">根据碱基互补配对原则，测序数据的GC (AT) 碱基含量理论上应该相等。GC分离现象往往是由于文库构建和测序带来的，这会影响后续数据分析。为此我们在进行信息分析之前需要检查测序数据是否有GC分离现象。</p>
+				<p class="indent">在转录组建库过程中对mRNA进行反转录时使用的6bp的随机引物，会引起扩增前几个位置的核苷酸组成存在一定的偏好性，由此引发read前几个碱基GC含量分布不均，这种不均属于正常情况。
+				</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">
+					<div class="custom-container mouseWheelButtons_qc2" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class="qc002">
+									<li><a rel="gc" id="examplex" href='./pictures/ck_gc.png' title="横坐标为碱基位置，纵坐标为碱基所占的比例，不同颜色代表不同碱基。"><img src='./pictures/ck_gc.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="gc" id="examplex" href='./pictures/wll_gc.png' title="横坐标为碱基位置，纵坐标为碱基所占的比例，不同颜色代表不同碱基。"><img src='./pictures/wll_gc.png' class="smallpic" alt="" description="" /></a></li>        
+								</ul>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="qc002">1</span>/2 碱基含量分布 </p>
+                            </div>                            
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 
+                <h3>3.数据过滤</h3>
+				<p class="indent">下机数据（Raw Data即Raw Reads）通常会含有少量的接头污染及低质量的Reads，如果不对其进行过滤处理会对后续分析造成影响，为此我们对这部分Reads进行了过滤，数据过滤标准如下：</p>
+				<p class="indent">1) 使用<a href="http://cutadapt.readthedocs.io/en/stable/" target="_blank">cutadapt</a> (Martin M. ,  2011; 版本: v1.10; 参数: -e 0.12 -O 5) 过滤带有测序接头 (adapter) 的Reads；</p>
+				<p class="indent">2) 过滤N (不确定碱基) 含量比例大于10%的Reads；</p>
+				<p class="indent">3) 过滤低质量碱基 (Q&lt20) 含量大于50％的Reads；</p>
+				<p class="indent">4) 当rRNA占总reads数比例超过1%时，会先去除rRNA的reads；</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">
+					<div class="custom-container mouseWheelButtons_qc3" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class="qc003">
+									<li><a rel="pie" id="examplex" href='./pictures/classfication_bar.png' title="Raw Reads数据组成，不同颜色的比例代表不同类型数据的比例。"><img src='./pictures/classfication_bar.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="pie" id="examplex" href='./pictures/ck_classfication_pie.png' title="Raw Reads数据组成，不同颜色的比例代表不同类型数据的比例。"><img src='./pictures/ck_classfication_pie.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="pie" id="examplex" href='./pictures/wll_classfication_pie.png' title="Raw Reads数据组成，不同颜色的比例代表不同类型数据的比例。"><img src='./pictures/wll_classfication_pie.png' class="smallpic" alt="" description="" /></a></li>        
+								</ul>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="qc003">1</span>/3 Raw Reads中各成分的比例 </p>
+                            </div>                               
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 				
+				<h3>4.测序数据统计</h3>
+				<p class="table_title" style="font-weight: bold">所有样本的测序数据量及质量统计表如下：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+					<thead>
+						<tr>
+							<th>Sample name</th>
+							<th>rRNA Rate(%)</th>
+							<th>Raw Reads'</th>
+							<th>Clean reads</th>
+							<th>Clean bases(Gb)</th>
+							<th>Error rate(%)</th>
+							<th>Q20(%)</th>
+							<th>Q30(%)</th>
+							<th>GC content(%)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>ck</td>
+							<td>0.04</td>
+							<td>2000000</td>
+							<td>1789593</td>
+							<td>0.54</td>
+							<td>0.02</td>
+							<td>96.33</td>
+							<td>90.85</td>
+							<td>55.43</td>
+						</tr>
+						<tr>
+							<td>wll</td>
+							<td>0.16</td>
+							<td>2000000</td>
+							<td>1726874</td>
+							<td>0.52</td>
+							<td>0.02</td>
+							<td>95.62</td>
+							<td>89.34</td>
+							<td>54.37</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				<div class="annotation">
+					<p>① Sample name：样品名</p>
+					<p>② rRNA Rate：Raw Reads中rRNA reads占的比例</p>
+					<p>③ Raw Reads'：去除rRNA后 (rRNA比例高于1%时) 的Raw Reads</p>
+					<p>④ Clean Reads：Raw Reads'过滤含接头及低质量测序数据后的reads数</p>
+					<p>⑤ Clean Bases：Clean Reads的条数乘以测序数据读长，即过滤后的总碱基量</p>
+					<p>⑥ Error Rate：碱基的平均错误率</p>
+					<p>⑦ Q20、Q30：Phred 质量值大于20、30的碱基占总碱基的比例</p>
+					<p>⑧ GC Content：GC含量，测序数据中GC碱基数占总碱基数的比例</p>
+				</div>
+                <br>
+                <h3>5.结果目录</h3>
+                <div>
+                    <pre>
+<a href = "../../QualityControl" target="_blank" style="font-size: 12px">QualityControl</a>
+|-- <a href = "../../QualityControl/BaseContent" target="_blank" style="font-size: 12px">BaseContent</a>（碱基含量分布图）
+|   |-- <a href = "../../QualityControl/BaseContent/BaseContent.README.txt" target="_blank" style="font-size: 12px">BaseContent.README.txt</a>
+|   |-- *_gc.png
+|   `-- *_gc.pdf
+|-- <a href = "../../QualityControl/BaseQuality" target="_blank" style="font-size: 12px">BaseQuality</a>（碱基质量分布图）
+|   |-- <a href = "../../QualityControl/BaseQuality/BaseQuality.README.txt" target="_blank" style="font-size: 12px">BaseQuality.README.txt</a>
+|   |-- *_quality.png
+|   `-- *_quality.pdf
+|-- <a href = "../../QualityControl/QCsummary" target="_blank" style="font-size: 12px">QCsummary</a>（测序数据质量汇总表）
+|   |-- <a href = "../../QualityControl/QCsummary/QCsummary.README.txt" target="_blank" style="font-size: 12px">QCsummary.README.txt</a>
+|   `-- qc_table.xls
+`-- <a href = "../../QualityControl/ReadsClassification" target="_blank" style="font-size: 12px">ReadsClassification</a>（原始测序数据组成）
+    |-- <a href = "../../QualityControl/ReadsClassification/ReadsClassification.README.txt" target="_blank" style="font-size: 12px">ReadsClassification.README.txt</a>
+    |-- classfication_bar.png
+    |-- classfication_bar.pdf
+    |-- *_classfication_pie.png
+    `-- *_classfication_pie.pdf
+                    </pre>
+                </div>               
+			</div>
+
+
+            
+			<div id="partADQC" class="r_part_box">
+                <div class="first_title">
+                	<h2><img  src="img/report_01.png" alt="">高级数据QC</h2>
+                </div>
+                <h3>1.比对结果统计</h3>
+				<p class="indent">使用<a href="http://ccb.jhu.edu/software/tophat/index.shtml" target="_blank">Hista2</a> (Kim <i>et.al.,</i> 2013; 版本: 2.1.0; 参数: 默认)，将reads比对到参考序列上。</p>
+				<p class="table_title" style="font-weight: bold">所有样本与参考序列的比对统计如下：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+					<thead>
+						<tr>
+							<th>Sample name</th>
+							<th>ck</th>
+							<th>wll</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Total reads</td>
+							<td>3,579,186</td>
+							<td>3,453,748</td>
+						</tr>
+						<tr>
+							<td>Total mapped</td>
+							<td>3,386,668 (94.62%)</td>
+							<td>3,239,773 (93.80%)</td>
+						</tr>
+						<tr>
+							<td>Multiple mapped</td>
+							<td>67,788 (1.89%)</td>
+							<td>76,471 (2.21%)</td>
+						</tr>
+						<tr>
+							<td>Uniquely mapped</td>
+							<td>3,318,880 (92.73%)</td>
+							<td>3,163,302 (91.59%)</td>
+						</tr>
+						<tr>
+							<td>Read-1</td>
+							<td>1,677,045 (46.86%)</td>
+							<td>1,601,047 (46.36%)</td>
+						</tr>
+						<tr>
+							<td>Read-2</td>
+							<td>1,641,835 (45.87%)</td>
+							<td>1,562,255 (45.23%)</td>
+						</tr>
+						<tr>
+							<td>Reads map to '+'</td>
+							<td>1,657,202 (46.30%)</td>
+							<td>1,577,681 (45.68%)</td>
+						</tr>
+						<tr>
+							<td>Reads map to '-'</td>
+							<td>1,661,678 (46.43%)</td>
+							<td>1,585,621 (45.91%)</td>
+						</tr>
+						<tr>
+							<td>Non-splice reads</td>
+							<td>2,127,169 (59.43%)</td>
+							<td>1,998,161 (57.85%)</td>
+						</tr>
+						<tr>
+							<td>Splice reads</td>
+							<td>1,191,711 (33.30%)</td>
+							<td>1,165,141 (33.74%)</td>
+						</tr>
+						<tr>
+							<td>Reads mapped in proper pairs</td>
+							<td>3,173,324 (88.66%)</td>
+							<td>3,000,956 (86.89%)</td>
+						</tr>
+						<tr>
+							<td>Proper-paired reads map to different chrom</td>
+							<td>0 (0.00%)</td>
+							<td>0 (0.00%)</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				<div class="annotation">
+					<p>① Total reads：经过质控后的总Reads数 (Clean reads)</p>
+					<p>②  Total mapped：能比对到参考序列上的Reads数 (一般情况下，如果不存在污染且参考序列选择合适，这部分数据的比例大于70%)</p>
+					<p>③ Multiple mapped：能够比对到参考序列多个位置的Reads数 (这部分数据的比例一般会小于10%)</p>
+					<p>④ Uniquely mapped：比对到参考序列唯一位置的Reads数</p>
+					<p>⑤ Read-1, Read-2：Read1和Read2分别比对到参考序列上Reads数</p>
+					<p>⑥ Reads map to '+'，Reads map to '-'：分别比对到序列上正链和负链的Reads数</p>
+					<p>⑦ Splice reads：同一条Read分段比对到不同外显子的总数 (也称为Junction reads)，Non-splice reads为同一条Read只比对到一个外显子的总数，Splice reads的比例在很大程度上取决于测序的读长</p>
+					<p>⑧ Reads mapped in proper pairs：reads对满足插入片段大小，同时read1和read2分别比对到在不同链的数目</p>
+					<p>⑨ Proper-paired reads map to different chrom：⑧中read1和read2比对到不同染色体的reads对数目</p>
+					<br>
+				</div>
+				<h3>2.比对区域分布</h3>
+				<p class="indent">根据Reads比对到参考序列的Exon(外显子)、Intron(内含子)和Intergenic (基因间区)三个区域的情况对其进行统计分析。</p>
+				<p class="indent">在参考序列注释较为完全的物种中，比对到Exon(外显子)的Reads含量最高，比对到Intron(内含子)区域的Reads是由于pre-mRNA的残留及可变剪切过程中发生的内含子滞留事件导致的，而比对到Intergenic(基因间区)的Reads是因为参考序列注释不完全。</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_adqc1" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='adqc001'>
+									<li><a rel="map_region" id="examplex" href='./pictures/ck_mr.png' title="比对区域分布饼图，蓝色为exon比例，红色为intron比例，绿色为intergenic比例。"><img src='./pictures/ck_mr.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="map_region" id="examplex" href='./pictures/wll_mr.png' title="比对区域分布饼图，蓝色为exon比例，红色为intron比例，绿色为intergenic比例。"><img src='./pictures/wll_mr.png' class="smallpic" alt="" description="" /></a></li>        
+								</ul>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="adqc001">1</span>/2 Reads在参考序列不同区域的分布情况 </p>
+                            </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 				
+				<br>
+                <h3>3.Reads分布密度</h3>
+				<p class="indent">对比对到参考序列上的Reads在各条染色体 (分正负链)上的分布密度情况进行统计。如下图所示，设置滑动窗口为10Kb，并计算窗口内比对到每个碱基Reads的中位数的对数值 (log<sub>2</sub>)。一般情况下，比对到该染色体内的Reads总数与染色体长度成正比 (Marquez <i>et al., </i>2012)。从比对到染色体上的Reads数与染色体长度的关系图中，可以更加直观看出染色体长度和Reads总数的关系。</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_adqc2" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='adqc002'>
+									<li><a rel="chr_density" id="examplex" href='./pictures/ck.density.png' title="横坐标为染色体的位置(Mb)，纵坐标为log<sub>2</sub>(窗口内Reads中位数)，蓝色为正链，红色为负链。"><img src='./pictures/ck.density.png' class="smallpic" alt="" description="" /></a></li>
+									<li><a rel="chr_density" id="examplex" href='./pictures/ck.chr_reads.png' title="横坐标为染色体的位置(Mb)，纵坐标为mapped到染色体上的Reads数(单位为M)，图中蓝色直线为图中各点的拟合回归直线，灰色区域表示95%的置信区间。"><img src='./pictures/ck.chr_reads.png' class="smallpic" alt="" description="" /></a></li>     									
+									<li><a rel="chr_density" id="examplex" href='./pictures/wll.density.png' title="横坐标为染色体的位置(Mb)，纵坐标为log<sub>2</sub>(窗口内Reads中位数)，蓝色为正链，红色为负链。"><img src='./pictures/wll.density.png' class="smallpic" alt="" description="" /></a></li>
+									<li><a rel="chr_density" id="examplex" href='./pictures/wll.chr_reads.png' title="横坐标为染色体的位置(Mb)，纵坐标为mapped到染色体上的Reads数(单位为M)，图中蓝色直线为图中各点的拟合回归直线，灰色区域表示95%的置信区间。"><img src='./pictures/wll.chr_reads.png' class="smallpic" alt="" description="" /></a></li>     									
+								</ul>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="adqc002">1</span>/4 Reads在染色体上的密度分布图 </p>
+                            </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束------------------------------------------------->
+				<br>
+                <h3>4.表达水平的饱和曲线检查</h3>
+                <p class="indent">                当前数据量是否能够准确定量基因表达水平可以通过定量饱和曲线来评估。一般来说，基因表达量越高，准确定量所需要的数据量就越小；基因表达量越小，则准确对其定量所需要的数据量就越大。抽取5%、10%、...、90%、95%的测序数据分别进行基因表达定量分析，将这些数据量下某个基因的定量结果与100%数据量的结果比较， 如果差异小于15%，则认为这个基因当前定量准确。  
+                </p>
+                <!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_adqc3" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='adqc003'>
+								<li><a rel="saturation" id="examplex" href='./pictures/ck.saturation.png' title="横坐标为抽取数据量的比例，纵坐标为定量误差在15%内的基因比例，不同颜色曲线表示定量结果FPKM在不同区间的基因。"><img src='./pictures/ck.saturation.png' class="smallpic" alt="" description="" /></a></li>
+								<li><a rel="saturation" id="examplex" href='./pictures/wll.saturation.png' title="横坐标为抽取数据量的比例，纵坐标为定量误差在15%内的基因比例，不同颜色曲线表示定量结果FPKM在不同区间的基因。"><img src='./pictures/wll.saturation.png' class="smallpic" alt="" description="" /></a></li>
+								</ul>
+								<p class="p_center">定量饱和曲线检查 </p>
+								<br>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="adqc003">1</span>/2 定量饱和曲线检查 </p>
+                            </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 
+                <br>
+                <h3>5.结果目录</h3>
+                <div>
+                    <pre>
+<a href = "../../AdvancedQc" target="_blank" style="font-size: 12px">AdvancedQc</a>
+|-- <a href = "../../AdvancedQc/MappedRegion" target="_blank" style="font-size: 12px">MappedRegion</a>（reads比对区域饼图）
+|   |-- <a href = "../../AdvancedQc/MappedRegion/MappedRegion.README.txt" target="_blank" style="font-size: 12px">MappedRegion.README.txt</a>
+|   |-- *_mr.png
+|   `-- *_mr.pdf
+|-- <a href = "../../AdvancedQc/MappedSummary" target="_blank" style="font-size: 12px">MappedSummary</a>（reads比对汇总表）
+|   |-- <a href = "../../AdvancedQc/MappedSummary/MappedSummary.README.txt" target="_blank" style="font-size: 12px">MappedSummary.README.txt</a>
+|   `-- mapped_stat.xls
+|-- <a href = "../../AdvancedQc/ReadsDensity" target="_blank" style="font-size: 12px">ReadsDensity</a>（reads密度分布）
+|   |-- <a href = "../../AdvancedQc/ReadsDensity/ReadsDensity.README.txt" target="_blank" style="font-size: 12px">ReadsDensity.README.txt</a>
+|   |-- *_density.png
+|   |-- *_density.pdf
+|   |-- *_chr_reads.png
+|   `-- *_chr_reads.pdf
+`-- <a href = "../../AdvancedQc/SaturationCurve" target="_blank" style="font-size: 12px">SaturationCurve</a>（reads饱和曲线图）
+    |-- <a href = "../../AdvancedQc/SaturationCurve/SaturationCurve.README.txt" target="_blank" style="font-size: 12px">SaturationCurve.README.txt</a>
+    |-- *_saturation.png
+    `-- *_saturation.pdf
+                    </pre>
+                </div>                
+			</div>
+
+
+
+			<div id="partSNP" class="r_part_box">
+                <div class="first_title">
+                	<h2><img  src="img/report_01.png" alt="">SNP和InDel检测</h2>
+                </div>
+				<p class="indent">SNP（Single Nucleotide Polymorphisms），指基因组水平上由单个核苷酸变异引起的DNA序列多态性。SNP主要为转换和颠换两种类型，一般二者的比例为2:1。因为其广泛存在于基因组上，现在成为了遗传研究的主要标记。InDel（Insertion and Deletion）指基因组上小片段的插入和缺失，编码区的InDel往往会引起基因功能的重大改变。</p>
+				<p class="indent">通过SAMtools或Picard等工具对比对结果进行排序、去PCR和光学重复等处理后，使用GATK分别进行SNP和InDel检测，并过滤低质量的结果，得到如下可靠的SNP和InDel检测结果。</p>
+                <p>ANNOVAR(Wang, Li et al. 2010)是目前用来进行变异注释的主流软件，因其高效、强大的特点，我们选用其作为SNP、InDel、SV、CNV的注释工具。</p>
+				<p class="table_title" style="font-weight: bold">SNP分析部分结果如下：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+                <thead>
+                    <tr>
+                            <th>Category</th>
+                            <th>ck</th>
+                            <th>wll</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                            <td>Upstream</td>
+                            <td>247.0</td>
+                            <td>255.0</td>
+                    </tr>
+                    <tr>
+                            <td>Exonic Stop gain</td>
+                            <td>9.0</td>
+                            <td>10.0</td>
+                    </tr>
+                    <tr>
+                            <td>Exonic Stop loss</td>
+                            <td>3.0</td>
+                            <td>3.0</td>
+                    </tr>
+                    <tr>
+                            <td>Exonic Synonymous</td>
+                            <td>925.0</td>
+                            <td>951.0</td>
+                    </tr>
+                    <tr>
+                            <td>Exonic Non-synonymous</td>
+                            <td>880.0</td>
+                            <td>908.0</td>
+                    </tr>
+                    <tr>
+                            <td>Intronic</td>
+                            <td>85.0</td>
+                            <td>93.0</td>
+                    </tr>
+                    <tr>
+                            <td>Splicing</td>
+                            <td>1.0</td>
+                            <td>1.0</td>
+                    </tr>
+                    <tr>
+                            <td>Downstream</td>
+                            <td>303.0</td>
+                            <td>326.0</td>
+                    </tr>
+                    <tr>
+                            <td>Upstream/Downstream</td>
+                            <td>41.0</td>
+                            <td>42.0</td>
+                    </tr>
+                    <tr>
+                            <td>Intergenic</td>
+                            <td>626.0</td>
+                            <td>791.0</td>
+                    </tr>
+                    <tr>
+                            <td>ts</td>
+                            <td>2049.0</td>
+                            <td>2227.0</td>
+                    </tr>
+                    <tr>
+                            <td>tv</td>
+                            <td>1071.0</td>
+                            <td>1153.0</td>
+                    </tr>
+                    <tr>
+                            <td>ts/tv</td>
+                            <td>1.913</td>
+                            <td>1.931</td>
+                    </tr>
+                    <tr>
+                            <td>Total</td>
+                            <td>3120.0</td>
+                            <td>3380.0</td>
+                    </tr>
+                </tbody>
+				</table>
+				</div>
+				<div class="annotation">
+					<p>① Sample：样本名（下同）</p>
+					<p>② Upstream:位于基因上游1 kb内（或有重叠区域，下同）</p>
+					<p>③ Exonic：外显子区（下同），包括：Stop gain：非同义突变获得终止密码子（下同），Stop loss：非同义突变失去终止密码子（下同），Synonymous：同义突变，Non-synonyous：非同义突变</p>
+					<p>④ Intronic：内含子区（下同）</p>
+					<p>⑤ Splicing：在剪接位点2 bp内（下同）</p>
+					<p>⑥ Downstream：位于基因下游1 kb内（或有重叠区域，下同）</p>
+					<p>⑦ Upstream/Downstream：Upstream和Downstream的交集（下同）</p>
+					<p>⑧ Intergenic：基因间区（下同）</p>
+					<p>⑨ ts：转换；tv：颠换；ts/tv：转换颠换之比</p>
+					<p>⑩ Het rate：杂合率（下同）</p>
+					<p>⑪ Total：此类变异总数（下同）</p>                    
+					<br>
+				</div>
+				<p class="table_title" style="font-weight: bold">InDel分析部分结果：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+                <thead>
+                    <tr>
+                            <th>Category</th>
+                            <th>ck</th>
+                            <th>wll</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Upstream</td>
+                        <td>35.0</td>
+                        <td>36.0</td>
+                    </tr>
+                    <tr>
+                        <td>Intronic</td>
+                        <td>9.0</td>
+                        <td>8.0</td>
+                    </tr>
+                    <tr>
+                        <td>Downstream</td>
+                        <td>49.0</td>
+                        <td>47.0</td>
+                    </tr>
+                    <tr>
+                        <td>Upstream/Downstream</td>
+                        <td>7.0</td>
+                        <td>7.0</td>
+                    </tr>
+                    <tr>
+                        <td>Intergenic</td>
+                        <td>36.0</td>
+                        <td>37.0</td>
+                    </tr>
+                    <tr>
+                        <td>ts</td>
+                        <td>55.0</td>
+                        <td>55.0</td>
+                    </tr>
+                    <tr>
+                        <td>tv</td>
+                        <td>155.0</td>
+                        <td>150.0</td>
+                    </tr>
+                    <tr>
+                        <td>ts/tv</td>
+                        <td>0.354</td>
+                        <td>0.366</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>210.0</td>
+                        <td>205.0</td>
+                    </tr>
+                </tbody>
+                </table>
+                </div>
+				<div class="annotation">
+					<p>① Sample：样本名（下同）</p>
+					<p>② Upstream:位于基因上游1 kb内（或有重叠区域，下同）</p>
+					<p>③ Exonic：外显子区（下同），包括：Stop gain：非同义突变获得终止密码子（下同），Stop loss：非同义突变失去终止密码子（下同），Synonymous：同义突变，Non-synonyous：非同义突变</p>
+					<p>④ Intronic：内含子区（下同）</p>
+					<p>⑤ Splicing：在剪接位点2 bp内（下同）</p>
+					<p>⑥ Downstream：位于基因下游1 kb内（或有重叠区域，下同）</p>
+					<p>⑦ Upstream/Downstream：Upstream和Downstream的交集（下同）</p>
+					<p>⑧ Intergenic：基因间区（下同）</p>
+					<p>⑨ ts：转换；tv：颠换；ts/tv：转换颠换之比</p>
+					<p>⑩ Het rate：杂合率（下同）</p>
+					<p>⑪ Total：此类变异总数（下同）</p>                    
+					<br>
+				</div>
+                <br>
+                <h3>5.结果目录</h3>
+                <div>
+                    <pre>
+<a href = "../../Snp_Indel" target="_blank" style="font-size: 12px">Snp_Indel</a>
+|-- <a href = "../../Snp_Indel/SNP" target="_blank" style="font-size: 12px">SNP</a>
+|  |-- <a href = "../../Snp_Indel/SNP/SNP.README.txt" target="_blank" style="font-size: 12px">SNP.README.txt</a>
+|  |-- SNP.vcf
+|  |-- SNP_genotype.xls
+|  |-- SNP.avinput.variant_function
+|  `-- SNP.avinput.exonic_variant_function
+`-- <a href = "../../Snp_Indel/InDel" target="_blank" style="font-size: 12px">Indel</a>
+   |-- <a href = "../../Snp_Indel/InDel/InDel.README.txt" target="_blank" style="font-size: 12px">InDel.README.txt</a>
+   |-- InDel.vcf
+   |-- InDel_genotype.xls
+   |-- InDel.avinput.variant_function
+   `-- InDel.avinput.exonic_variant_function
+                   </pre>
+                </div>
+			</div>					
+
+
+            
+			<div id="partASSEMBLE" class="r_part_box">
+                <div class="first_title">
+                	<h2><img  src="img/report_01.png" alt="">基因注释优化</h2>
+                </div>
+                <h3>1.新转录本预测</h3>
+				<p class="indent"><a href="http://cole-trapnell-lab.github.io/cufflinks/" target="_blank">Cufflinks</a>(Trapnell <i>et al.,</i> 2010,2012; 版本: v2.1.1)可以对<a href="http://ccb.jhu.edu/software/hisat2/index.shtml" target="_blank">Hisat2</a>(Kim <i>et.al.,</i> 2015; 版本: v2.1.0; 参数: 默认)比对的结果进行组装，利用Cuffcompare和已知的基因序列进行比较，可以发现未注释的新基因或者已知基因新的外显子，也可以对已知基因的起始和终止位置进行优化。 </p>
+				<p class="table_title" style="font-weight: bold">新转录本结构注释部分结果如下：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+					<thead>
+						<tr>
+							<th>Chromesome</th>
+							<th>Source</th>
+							<th>Feature</th>
+							<th>Start</th>
+							<th>End</th>
+							<th>Score</th>
+							<th>Strand</th>
+							<th>Frame</th>
+							<th>Attributes</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>novelGene</td>
+							<td>exon</td>
+							<td>2481205</td>
+							<td>2481932</td>
+							<td>.</td>
+							<td>+</td>
+							<td>.</td>
+							<td>gene_id "Novel00001"; transcript_id "Novel00001.1"; exon_number "1";</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>novelGene</td>
+							<td>exon</td>
+							<td>2482667</td>
+							<td>2483094</td>
+							<td>.</td>
+							<td>+</td>
+							<td>.</td>
+							<td>gene_id "Novel00001"; transcript_id "Novel00001.1"; exon_number "2";</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>novelGene</td>
+							<td>exon</td>
+							<td>4127480</td>
+							<td>4129196</td>
+							<td>.</td>
+							<td>+</td>
+							<td>.</td>
+							<td>gene_id "Novel00002"; transcript_id "Novel00002.1"; exon_number "1";</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>novelGene</td>
+							<td>exon</td>
+							<td>4129517</td>
+							<td>4129715</td>
+							<td>.</td>
+							<td>+</td>
+							<td>.</td>
+							<td>gene_id "Novel00002"; transcript_id "Novel00002.1"; exon_number "2";</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>novelGene</td>
+							<td>exon</td>
+							<td>4129827</td>
+							<td>4129886</td>
+							<td>.</td>
+							<td>+</td>
+							<td>.</td>
+							<td>gene_id "Novel00002"; transcript_id "Novel00002.1"; exon_number "3";</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				<div class="annotation">
+					<p>① Chromesome：染色体编号</p>
+					<p>② Source：来源，novelGene指新基因，novelIsoform指新转录本</p>
+					<p>③ Feature：基因结构</p>
+					<p>④ Start：起始位置</p>
+					<p>⑤ End：终止位置</p>
+					<p>⑥ Score：缺省值，可忽略</p>
+					<p>⑦ Strand：正负链信息</p>
+					<p>⑧ Frame：缺省值，可忽略</p>
+					<p>⑨ Attributes：其它属性，包括基因编号、转录本编号等信息</p>
+					<br>
+				</div>
+				<h3>2.基因结构优化</h3>
+				<p class="table_title" style="font-weight: bold">已知基因结构优化部分结果：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+					<thead>
+						<tr>
+							<th>Gene_id</th>
+							<th>Chromosome</th>
+							<th>Strand</th>
+							<th>Original_span</th>
+							<th>Assembled_span</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>EPlOSAG00000000129</td>
+							<td>6</td>
+							<td>+</td>
+							<td>16701989~16702017</td>
+							<td>16696900~16702832</td>
+						</tr>
+						<tr>
+							<td>EPlOSAG00000000211</td>
+							<td>3</td>
+							<td>+</td>
+							<td>345956~346010</td>
+							<td>345956~346021</td>
+						</tr>
+						<tr>
+							<td>EPlOSAG00000000456</td>
+							<td>2</td>
+							<td>-</td>
+							<td>18315508~18315590</td>
+							<td>18314804~18317226</td>
+						</tr>
+						<tr>
+							<td>EPlOSAG00000000620</td>
+							<td>1</td>
+							<td>-</td>
+							<td>20133149~20133272</td>
+							<td>20133048~20133272</td>
+						</tr>
+						<tr>
+							<td>EPlOSAG00000000727</td>
+							<td>7</td>
+							<td>+</td>
+							<td>29674809~29674926</td>
+							<td>29674817~29674918</td>
+						</tr>
+					</tbody>
+				</table>
+                </div>
+				<div class="annotation">
+					<p>① Gene_id：基因id</p>
+					<p>② Chromosome：染色体编号</p>
+					<p>③ Strand：正负链信息</p>
+					<p>④ Original_span：原始注释染色体区间</p>
+					<p>⑤ Assembled_span：组装染色体区间</p>
+				</div>
+                <br>
+                <h3>3.结果目录</h3>
+                <div>
+                    <pre>
+<a href = "../../Assemble" target="_blank" style="font-size: 12px">Assemble</a>
+|-- <a href = "../../Assemble/NovelGene.README.txt" target="_blank" style="font-size: 12px">NovelGene.README.txt</a>
+|-- geneNewPos.xls
+|-- novelGene.gtf.xls
+`-- novelIsoform.gtf.xls
+                    </pre>
+                </div>
+			</div>
+
+
+            
+			<div id="partAS" class="r_part_box">
+                <div class="first_title">
+                	<h2><img  src="img/report_01.png" alt="">可变剪接分析</h2>
+					<p class="indent">根据<a href="http://cole-trapnell-lab.github.io/cufflinks/" target="_blank">Cufflinks</a>(Trapnell et al., 2010,2012)预测出基因模型，用<a href="http://ccb.jhu.edu/software/ASprofile/" target="_blank">ASprofile</a>软件对每个样品的可变剪接事件进行分类统计。ASprofile可变剪接分析流程及对可变剪接事件的分类如下图所示：
+                    </p><div class="img_box">
+						<img class="img-style" width="70%" src="image/as.png" alt="" />
+                    </div>
+						<p class='indent'>ASprofile对可变剪接事件分类的定义如下:</p>
+						<p class='indent'>1) TSS: Alternative 5' first exon (transcription start site) 第一个外显子可变剪接</p>
+						<p class='indent'>2) TTS: Alternative 3' last exon (transcription terminal site)　最后一个外显子可变剪接</p>
+						<p class='indent'>3) SKIP: Skipped exon (SKIP_ON,SKIP_OFF pair)　单外显子跳跃</p>
+						<p class='indent'>4) XSKIP: Approximate SKIP (XSKIP_ON,XSKIP_OFF pair)　单外显子跳跃（模糊边界）</p>
+						<p class='indent'>5) MSKIP: Multi-exon SKIP (MSKIP_ON,MSKIP_OFF pair)　多外显子跳跃</p>
+						<p class='indent'>6) XMSKIP: Approximate MSKIP (XMSKIP_ON,XMSKIP_OFF pair)　多外显子跳跃（模糊边界）</p>
+						<p class='indent'>7) IR: Intron retention (IR_ON, IR_OFF pair)　单内含子滞留</p>
+						<p class='indent'>8) XIR: Approximate IR (XIR_ON, XIR_OFF pair)　单内含子滞留（模糊边界）</p>
+						<p class='indent'>9) MIR: Multi-IR (MIR_ON, MIR_OFF pair)　多内含子滞留</p>
+						<p class='indent'>10) XMIR: Approximate MIR (XMIR_ON, XMIR_OFF pair)　多内含子滞留（模糊边界）</p>
+						<p class='indent'>11) AE: Alternative exon ends (5', 3', or both)　可变 5'或3'端剪接</p>
+                </div>
+                <h3>1.可变剪接类别和数量</h3>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_as1" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='as001'>
+									<li><a rel="as" id="examplex" href='./pictures/as_event.png' title="纵轴为可变剪接事件的分类缩写，横轴为该种事件下可变剪接的数量，不同样品用不同子图和颜色区分"><img src='./pictures/as_event.png' class="smallpic" alt="" description="" /></a></li>        
+								</ul>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="as001">1</span>/1 可变剪接分类和数量统计 </p>
+                            </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 
+				<h3>2.可变剪切结构和表达量</h3>
+				<p class="table_title" style="font-weight: bold">可变剪接结构和表达量统计部分结果如下：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+					<thead>
+						<tr>
+							<th>event_id</th>
+							<th>event_type</th>
+							<th>gene_id</th>
+							<th>chrom</th>
+							<th>event_start</th>
+							<th>event_end</th>
+							<th>event_pattern</th>
+							<th>strand</th>
+							<th>fpkm</th>
+							<th>ref_id</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1000001</td>
+							<td>TSS</td>
+							<td>CUFF.1</td>
+							<td>AC174930</td>
+							<td>6865</td>
+							<td>7065</td>
+							<td>6865</td>
+							<td>-</td>
+							<td>68.6902370791</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>1000002</td>
+							<td>TTS</td>
+							<td>CUFF.1</td>
+							<td>AC174930</td>
+							<td>3483</td>
+							<td>3539</td>
+							<td>3539</td>
+							<td>-</td>
+							<td>19.6712926713</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>1000003</td>
+							<td>TSS</td>
+							<td>CUFF.2</td>
+							<td>Syng_TIGR_047</td>
+							<td>12232</td>
+							<td>12950</td>
+							<td>12950</td>
+							<td>+</td>
+							<td>138.4310531492</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>1000004</td>
+							<td>TTS</td>
+							<td>CUFF.2</td>
+							<td>Syng_TIGR_047</td>
+							<td>15122</td>
+							<td>15451</td>
+							<td>15122</td>
+							<td>+</td>
+							<td>138.4310531492</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>1000005</td>
+							<td>TSS</td>
+							<td>CUFF.4</td>
+							<td>Syng_TIGR_023</td>
+							<td>18957</td>
+							<td>19229</td>
+							<td>18957</td>
+							<td>-</td>
+							<td>9.5408429428</td>
+							<td>-</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				<div class="annotation">
+					<p>① Event id: 可变剪接事件编号</p>
+					<p class="tremark">② Event type: 可变剪接事件类型 (TSS, TTS, SKIP_{ON,OFF}, XSKIP_{ON,OFF}, MSKIP_{ON,OFF}, XMSKIP_{ON,OFF}, IR_{ON ,OFF}, XIR_{ON,OFF}, AE, XAE)</p>
+					<p>③ Gene ID: cufflink组装结果中的基因编号</p>
+					<p>④ Chrom: 染色体编号</p>
+					<p>⑤ Event start: 可变剪接事件起始位置</p>
+					<p>⑥ Event end: 可变剪接事件结束位置</p>
+					<p>⑦ Event pattern: <span title='for TSS, TTS - inside boundary of alternative marginal exon; for *SKIP_ON,the coordinates of the skipped exon(s); for *SKIP_OFF, the coordinates of the enclosing introns; for *IR_ON, the end coordinates of the long, intron-containing exon; for *IR_OFF, the listing of coordinates of all the exons along the path containing the retained intron; for *AE, the coordinates of the exon variant'>可变剪接事件特征</span> </p>
+					<p>⑧ Strand: 基因正负链信息</p>
+					<p>⑨ FPKM: 此可变剪接类型该基因表达量</p>
+					<p>⑩ Ref id: 此基因在参考注释文件中的编号 </p>
+				</div>					
+                <br>
+                <h3>3.结果目录</h3>
+                <div>
+                    <pre>
+<a href = "../../AlternativeSplicing" target="_blank" style="font-size: 12px">AlternativeSplicing</a>
+|-- <a href = "../../AlternativeSplicing/AlternativeSplicing.README.txt" target="_blank" style="font-size: 12px">AlternativeSplicing.README.txt</a>（可变剪接）
+|-- as_event.png
+|-- as_event.xls
+`-- *.fpkm.xls
+                    </pre>
+                </div>                
+			</div>
+
+
+            
+			<div id="partDIFF" class="r_part_box">
+                <div class="first_title">
+                	<h2><img  src="img/report_01.png" alt="">基因表达分析</h2>
+                </div>
+				<h3>1.表达水平统计分析</h3>
+				<p class="indent">衡量一个基因表达水平的最直接指标为其转录本的丰度：转录本丰度越高，则基因表达水平越高。由于实验中对转录本的扩增是随机的，因此转录本的丰度体现为其测序数据量，即比对到该转录本对应基因的Reads数量。为了使不同长度基因、不同实验、不同测序数据量的样本间具有可比性，人们引入了FPKM的概念。FPKM (Fragments Per Kilo bases per Million fragments mapped)是每百万比对到参考序列的Fragments中来自某一基因每千碱基长度的Fragments数目。 FPKM同时考虑了测序深度和基因长度对Fragments计数的影响，是目前最为常用的基因表达水平衡量方法 (Mortazavi <i>et al.,</i> 2008)</p>
+				<p class="indent">采用<a href="http://www-huber.embl.de/users/anders/HTSeq/doc/count.html" target="_blank">HTSeq软件</a>中htseq-count (版本：0.6.0; 参数: 默认) 对各样品进行基因表达水平分析，模型为union。 结果文件分别统计了不同表达水平下基因的数量以及单个基因的表达水平。一般情况下，使用FPKM值为0.1或者1作为判断基因是否表达的阈值。</p>
+				<p class="table_title" style="font-weight: bold">不同表达水平区间的基因数量统计表如下：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+					<thead>
+						<tr>
+							<th>RPKM Interval</th>
+							<th>ck</th>
+							<th>wll</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0~1</td>
+							<td>73,117(80.08%)</td>
+							<td>72,402(79.30%)</td>
+						</tr>
+						<tr>
+							<td>1~3</td>
+							<td>3,416(3.74%)</td>
+							<td>3,066(3.36%)</td>
+						</tr>
+						<tr>
+							<td>3~5</td>
+							<td>2,100(2.30%)</td>
+							<td>1,974(2.16%)</td>
+						</tr>
+						<tr>
+							<td>5~15</td>
+							<td>5,529(6.06%)</td>
+							<td>5,278(5.78%)</td>
+						</tr>
+						<tr>
+							<td>15~60</td>
+							<td>5,079(5.56%)</td>
+							<td>5,981(6.55%)</td>
+						</tr>
+						<tr>
+							<td>>60</td>
+							<td>2,064(2.26%)</td>
+							<td>2,604(2.85%)</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				<br>
+				<p class="table_title" style="font-weight: bold">基因表达水平统计表如下：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+					<thead>
+						<tr>
+							<th>geneID</th>
+							<th>ck</th>
+							<th>wll</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>OS07G0656900</td>
+							<td>6.55730821843</td>
+							<td>13.1436048367</td>
+						</tr>
+						<tr>
+							<td>OS10G0188900</td>
+							<td>36.1515364754</td>
+							<td>46.0520740505</td>
+						</tr>
+						<tr>
+							<td>EPlOSAG00000042159</td>
+							<td>0.0</td>
+							<td>0.0</td>
+						</tr>
+						<tr>
+							<td>OS02G0192150</td>
+							<td>0.0</td>
+							<td>0.0</td>
+						</tr>
+						<tr>
+							<td>EPlOSAG00000042157</td>
+							<td>0.0</td>
+							<td>0.0</td>
+						</tr>
+					</tbody>
+				</table>               
+				</div>
+                <h3>2.RNA-Seq相关性检查</h3>
+				<p class="indent">生物学实验一般都需要设置重复对照，目的是为了证明实验的可重复性及评估结果的可靠性。相关系数越接近1，表明样品之间表达模式的相似度越高。Encode计划建议皮尔逊相关系数的平方 (R<sup>2</sup>) 大于0.92 (理想的取样和实验条件下，<a href="https://www.encodeproject.org/documents/91494746-0ffe-4931-b219-a09802ce1cfa/@@download/attachment/RNA_standards_v1_2011_May.pdf" target="_blank">RNA Standards v1.0</a>)。 而实际项目操作中，要求R<sup>2</sup>至少要大于0.8，否则需要对样品做出合理的解释，或重新进行实验。</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_diff1" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='diff001'>
+									<li><a rel="pearson" id="examplex" href='./pictures/fpkm_pearson.png' title="热图：展示所有样品间相关系数"><img src='./pictures/fpkm_pearson.png' class="smallpic" alt="" description="" /></a></li>
+									<li><a rel="pearson" id="examplex" href='./pictures/ck_VS_wll_corr.png' title="散点图：展示两样本间的相关性"><img src='./pictures/ck_VS_wll_corr.png' class="smallpic" alt="" description="" /></a></li>
+								</ul>
+								<p class="p_center">RNA-Seq相关性检查 </p>
+								<br>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="diff001">1</span>/2 RNA-Seq相关性检查 </p>
+                            </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 
+				<br>
+                <h3>3.样本表达水平对比</h3>
+				<p class="indent">FPKM (Fragments Per Kilobase of exon model per Million mapped reads) 是衡量基因相对表达量的一种方法， 因此可以通过所有基因的FPKM分布图及箱形图来比较基因在不同实验条件下的表达水平。具有多个生物学重复的样品，其FPKM为所有重复样品的均值。</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_diff2" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='diff002'>
+									<li><a rel="box" id="examplex" href='./pictures/fpkm_box.png' title="FPKM箱线图：横坐标为样品名，纵坐标为log10(FPKM+1)，每个箱线图对应5个统计量(自上而下分别为最大值，1/4分位数，中值，3/4分位数和最小值)。"><img src='./pictures/fpkm_box.png' class="smallpic" alt="" description="" /></a></li>
+									<li><a rel="box" id="examplex" href='./pictures/fpkm_violin.png' title="FPKM小提琴图：, 纵坐标为log10(FPKM+1)，图中间部分对应箱线图的5个统计量(自上而下分别为最大值，1/4分位数，中值，3/4分位数和最小值)，两边轮廓曲线对应核密度曲线。"><img src='./pictures/fpkm_violin.png' class="smallpic" alt="" description="" /></a></li>
+                                    <li><a rel="box" id="examplex" href='./pictures/fpkm_density.png' title="FPKM密度分布图：横坐标为log10(FPKM+1), 纵坐标为对应表达量基因的概率密度。"><img src='./pictures/fpkm_density.png' class="smallpic" alt="" description="" /></a></li>
+								</ul>
+								<p class="p_center">样本表达水平对比 </p>
+								<br>
+							</div>
+							<a href="#" class="next">&rsaquo;</a> 
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="diff002">1</span>/3 样本表达水平对比 </p>
+                            </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 
+				<h3>4.差异表达基因筛选</h3>
+				<p class="indent">根据基因表达水平分析中得到的readcount数据来进行基因差异表达分析。对于有生物学重复的样品，使用<a href="http://www.bioconductor.org/packages/release/bioc/html/DESeq.html" target="_blank">DESeq</a> (Anders <i>et al.,</i>2010; 版本: 1.22.1) 进行差异表达分析。DESeq使用的方法是基于负二项分布模型的算法， 即第 i 个基因在第 j 个样本中的 read count 值为Kij，则有：Kij ～ NB(μij,σij2)。 对于无生物学重复的样品，先用<a href="http://www.bioconductor.org/packages/release/bioc/html/edgeR.html" target="_blank">edgeR</a> (Robinson <i>et.al.,</i> 2010; 版本: 3.12.1)的TMM对readcount数据进行标准化处理后，再用<a href="http://www.bioconductor.org/packages/release/bioc/html/DEGseq.html" target="_blank">DEGseq</a> (Wang <i>et.al.,</i>; 版本: 1.24.0) 进行差异表达分析。 </p>
+				<p class="indent">对于无生物学重复的实验，为避免引入实验误差，应该对结果进行严格控制，对差异基因进行筛选的阈值一般为: |log<sub>2</sub>(FoldChange)| > 1 且 p-Adjusted &lt 0.005。对于有生物学重复的实验，由于DESeq已经进行了实验误差的控制，我们对差异基因筛选的标准一般为: p-Adjusted &lt 0.05。</p>
+                <p class="indent">本次分析筛选标准为：|log<sub>2</sub>(FoldChange)| &gt 0.05 且 p-Adjusted &lt 2，差异表达基因列表如下：</p>
+				<p class="table_title" style="font-weight: bold">基因表达对比列表如下：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+					<thead>
+						<tr>
+							<th>Gene ID</th>
+							<th>wll</th>
+							<th>ck</th>
+							<th>log2FoldChange</th>
+							<th>p-Value</th>
+							<th>p-Adjusted</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>OS11G0707000</td>
+							<td>39170.4325427501</td>
+							<td>8359.47635210373</td>
+							<td>2.22828058140161</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>OS01G0639900</td>
+							<td>11008.3045479297</td>
+							<td>937.176571959653</td>
+							<td>3.55412758866424</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>OS09G0436500</td>
+							<td>257.212263990239</td>
+							<td>4243.68035071085</td>
+							<td>-4.04428465362611</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>OS08G0104600</td>
+							<td>8681.03276931196</td>
+							<td>1798.46996073967</td>
+							<td>2.27109662531541</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>OS11G0171300</td>
+							<td>13884.7078698169</td>
+							<td>4373.49066914505</td>
+							<td>1.66663970264276</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>OS04G0459500</td>
+							<td>9714.63621092892</td>
+							<td>2432.49899380403</td>
+							<td>1.99772076322522</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				<div class="annotation">
+					<p>① Gene ID：基因编号</p>
+					<p>② sample1：校正后sample1样品的readcount值</p>
+					<p>③ sample2：校正后sample2样品的readcount值</p>
+					<p>④ log2FoldChange: log2(Sample1/Sample2)</p>
+					<p>⑤ p-Value: 统计学差异显著性水平，即错误拒绝H0的概率</p>
+					<p>⑥ p-Adjusted(qvalue): 多重假设检验校正后的p-Value</p>
+					<br>
+				</div>
+				<h3>5.差异表达基因火山图 </h3>
+				<p class="indent">用火山图可以展示差异基因的整体分布情况。</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_diff3" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='diff003'>
+									<li><a rel="volcano" id="examplex" href='./pictures/wllck.volcano.png' title="差异表达显著的基因用红点（上调）和蓝点（下调）表示，差异表达不显著的基因用绿点表示；横坐标代表基因在不同样本中表达倍数变化；纵坐标代表基因表达量变化差异的统计学显著性。"><img src='./pictures/wllck.volcano.png' class="smallpic" alt="" description="" /></a></li>
+								</ul>
+							</div>
+							<a href="#" class="next">&rsaquo;</a> 
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="diff003">1</span>/1 差异基因火山图  </p>
+                            </div>                            
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 
+				<h3>6.差异基因表达聚类 </h3>
+				<p class="indent">差异基因表达聚类分析可用于评估差异基因在不同实验条件下的表达模式；通过将表达模式相同或相近的基因聚集成类，从而识别未知基因的功能或已知基因的未知功能。 以不同实验条件下的差异基因的FPKM值为表达水平，做层次聚类(hierarchical clustering)分析，不同颜色的区域代表不同的聚类分组信息，颜色相近聚类区内的基因表达模式相近，说明这些基因可能具有相似的功能或参与调控同一的代谢通路。</p>
+				<p class="indent">除了对差异基因表达量FPKM进行层次聚类分析，还分别用H-cluster、K-means和SOM等三种方法对差异基因的相对表达水平值log2(ratios)进行聚类。 不同的聚类算法分别将差异基因分为若干cluster，同一cluster中的基因在不同的处理条件下具有相似的表达水平变化趋势。 </p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_diff4" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='diff004'>
+									<li><a rel="cluster" id="examplex" href='./pictures/heatCluster.png' title=" 整体FPKM层次聚类图：以log10(FPKM+1)值进行聚类，红色表示高表达基因，蓝色表示低表达基因。颜色从红到蓝，表示log(FPKM+1)从大到小。"><img src='./pictures/heatCluster.png' class="smallpic" alt="" description="" /></a></li>
+									<li><a rel="cluster" id="examplex" href='./pictures/kmeans_subcluster_plots.png' title="log2(ratios)折线图(hcluster)：每个子图中的灰色线条表示一个cluster中的基因在不同实验条件下相对表达量，蓝色线条表示这个cluster中的所有基因在不同实验条件下相对表达量的平均值，x轴表示实验条件，y轴表示相对表达量。"><img src='./pictures/kmeans_subcluster_plots.png' class="smallpic" alt="" description="" /></a></li>
+								</ul>
+							</div>
+							<a href="#" class="next">&rsaquo;</a> 
+							<div class="clear"></div>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="diff004">1</span>/2 差异基因聚类图 </p>
+                            </div>                            
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 
+                <br>
+                <h3>7.结果目录</h3>
+                <div>
+                    <pre>
+<a href = "../../GeneExpress" target="_blank" style="font-size: 12px">GeneExpress</a>
+|-- <a href = "../GeneExpress/Correlation" target="_blank" style="font-size: 12px">Correlation</a>
+|   |-- <a href = "../../GeneExpress/Correlation/Correlation.README.txt" target="_blank" style="font-size: 12px">Correlation.README.txt</a>
+|   |-- *_corr.png
+|   `-- fpkm_pearson.png
+`-- <a href = "../../GeneExpress/Quatification" target="_blank" style="font-size: 12px">Quatification</a>
+    |-- <a href = "../../GeneExpress/Quatification/Quatification.README.txt" target="_blank" style="font-size: 12px">Quatification.README.txt</a>
+    |-- fpkm_box.png
+    |-- fpkm_density.png
+    |-- fpkm_violin.png
+    |-- fpkm.stat.xls
+    |-- fpkm.xls
+    `-- readcount.xls
+<a href = "../../DIFF" target="_blank" style="font-size: 12px">DIFF</a>
+|-- <a href = "../../DIFF/Cluster" target="_blank" style="font-size: 12px">Cluster</a>
+|   |-- <a href = "../../DIFF/Cluster/Cluster.README.txt" target="_blank" style="font-size: 12px">Cluster.README.txt</a>
+|   `-- *
+`-- <a href = "../../DIFF/Diff" target="_blank" style="font-size: 12px">Diff</a>
+    |-- <a href = "../../DIFF/Diff/Diff.README.txt" target="_blank" style="font-size: 12px">Diff.README.txt</a>
+    `-- *
+                    </pre>
+                </div> 
+			</div>
+
+
+           
+			<div id="partGO" class="r_part_box">
+                <div class="first_title">
+                	<h2><img  src="img/report_01.png" alt="">差异表达基因GO富集分析</h2>
+                </div>
+				<p class="indent">GO（Gene Ontology，<a target='_blank' href='http://www.geneontology.org'>http://www.geneontology.org</a>）是一个国际标准化的基因功能分类体系。旨在建立一个适用于各物种的，对基因和蛋白质功能进行限定和描述的，并能随着研究不断深入而更新的语言词汇标准。GO分为分子功能（Molecular Function）、生物过程（biological process）、和细胞组成（cellular component）三个ontology。GO的基本单位为term，每个term对应一个功能或属性。</p>
+				<p class="indent">GO富集分析采用的软件为<a href="http://www.bioconductor.org/packages/release/bioc/html/goseq.html"    target="_blank">GOseq</a>（版本：1.22.0，Young et al., 2010），此方法基于 Wallenius non-central 超几何分布。相对于普通的超几何分布(Hyper-geometric distribution)的算法，该方法认为从某个类别中抽取个体的概率与从该类别之外抽取一个个体的概率是不同的，而这种概率的不同是通过对基因长度的偏好性进行估计得到的，从而能更为准确地计算出差异基因所富集的GO term的概率。</p>
+                <h3>1.差异基因GO富集列表</h3>
+				<p class="table_title" style="font-weight: bold">差异基因GO富集列表如下：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+					<thead>
+						<tr>
+							<th>category</th>
+							<th>over_represented_pvalue</th>
+							<th>under_represented_pvalue</th>
+							<th>numDEInCat</th>
+							<th>numInCat</th>
+							<th>term</th>
+							<th>ontology</th>
+							<th>correct</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>GO:0009536</td>
+							<td>3.4417e-80</td>
+							<td>1</td>
+							<td>507</td>
+							<td>1842</td>
+							<td>plastid</td>
+							<td>CC</td>
+							<td>2.4955e-76</td>
+						</tr>
+						<tr>
+							<td>GO:0009507</td>
+							<td>1.2372e-77</td>
+							<td>1</td>
+							<td>492</td>
+							<td>1785</td>
+							<td>chloroplast</td>
+							<td>CC</td>
+							<td>4.4853e-74</td>
+						</tr>
+						<tr>
+							<td>GO:0044435</td>
+							<td>4.1414e-65</td>
+							<td>1</td>
+							<td>308</td>
+							<td>945</td>
+							<td>plastid part</td>
+							<td>CC</td>
+							<td>1.001e-61</td>
+						</tr>
+						<tr>
+							<td>GO:0044434</td>
+							<td>3.2744e-62</td>
+							<td>1</td>
+							<td>300</td>
+							<td>930</td>
+							<td>chloroplast part</td>
+							<td>CC</td>
+							<td>5.9356e-59</td>
+						</tr>
+						<tr>
+							<td>GO:0044444</td>
+							<td>5.1181e-50</td>
+							<td>1</td>
+							<td>849</td>
+							<td>4528</td>
+							<td>cytoplasmic part</td>
+							<td>CC</td>
+							<td>7.4222e-47</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				<div class="annotation">
+					<p>① Category：Gene Ontology数据库中唯一的编号</p>
+					<p>② Over represented pvalue：富集分析统计学显著水平</p>
+					<p>③ NumDEInCat：与该GO相关的差异表达基因数</p>
+					<p>④ NumInCat：GO注释中与该GO相关的的基因数目</p>
+					<p>⑤ Term：Gene Ontology功能的描述信息</p>
+					<p>⑥ Ontology：GO的类别(CC：细胞组分；BP：生物学过程；MF：分子功能)</p>
+					<p>⑦ Correct：对多重假设检验校正后的P-Value</p>
+					<br>
+				</div>
+				<h3>2.差异基因GO富集柱状图</h3>
+				<p class="indent">差异表达基因GO富集柱状图能够直观的反映出差异表达基因在生物过程(biological process, BP)、细胞组分(cellular component, CC)和分子功能(molecular function, MF)的GO term上富集的分布情况。
+								前30个富集最显著的GO term会在如下柱形图中展示，如果不足30个，则全部展示：</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_go1" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='go001'>
+									<li><a rel="go_bar_region" id="examplex" href='./pictures/all_wllck_all_gobar.png' title="每个样本6张图，分别对应所有富集GO term、上调GO term、下调GO term、BP类GO term、MF类GO term和CC类GO term。横坐标为富集的GO term，纵坐标为该term中差异表达基因个数。带“*”为显著富集的GO term。"><img src='./pictures/all_wllck_all_gobar.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="go_bar_region" id="examplex" href='./pictures/all_wllck_up_gobar.png' title="每个样本6张图，分别对应所有富集GO term、上调GO term、下调GO term、BP类GO term、MF类GO term和CC类GO term。横坐标为富集的GO term，纵坐标为该term中差异表达基因个数。带“*”为显著富集的GO term。"><img src='./pictures/all_wllck_up_gobar.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="go_bar_region" id="examplex" href='./pictures/all_wllck_down_gobar.png' title="每个样本6张图，分别对应所有富集GO term、上调GO term、下调GO term、BP类GO term、MF类GO term和CC类GO term。横坐标为富集的GO term，纵坐标为该term中差异表达基因个数。带“*”为显著富集的GO term。"><img src='./pictures/all_wllck_down_gobar.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="go_bar_region" id="examplex" href='./pictures/all_wllck_BP_gobar.png' title="每个样本6张图，分别对应所有富集GO term、上调GO term、下调GO term、BP类GO term、MF类GO term和CC类GO term。横坐标为富集的GO term，纵坐标为该term中差异表达基因个数。带“*”为显著富集的GO term。"><img src='./pictures/all_wllck_BP_gobar.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="go_bar_region" id="examplex" href='./pictures/all_wllck_CC_gobar.png' title="每个样本6张图，分别对应所有富集GO term、上调GO term、下调GO term、BP类GO term、MF类GO term和CC类GO term。横坐标为富集的GO term，纵坐标为该term中差异表达基因个数。带“*”为显著富集的GO term。"><img src='./pictures/all_wllck_CC_gobar.png' class="smallpic" alt="" description="" /></a></li>        
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="go001">1</span>/5 GO富集柱状图</p>
+                            </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 				
+                <h3>3.差异基因GO富集DAG图</h3>
+				<p class="indent">差异表达基因GO富集分析结果可以用有向无环图(Directed Acyclic Graph，DAG)进行图形化展示。图中的分支代表包含关系，从上至下所定义的功能范围越来越小，有向无环图的主节点通常是GO富集分析结果的前10位，并通过包含关系，将相关联的GO Term一起展示，颜色的深浅代表富集程度。生物过程(biological process, BP)、分子功能(molecular function, MF)和细胞组分(cellular component, CC)的DAG图分别绘制。</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_go2" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='go002'>
+									<li><a rel="DAG" id="examplex" href='./pictures/all_wllck_GOmf_DAG.png' title="每个节点代表一个GO术语，方框代表的是富集程度TOP10的GO，颜色的深浅代表富集程度，颜色越深就表示富集程度越高，每个节点上展示了该term的名称及富集分析的Corrected p-Value。"><img src='./pictures/all_wllck_GOmf_DAG.png' class="smallpic" alt="" description="" /></a></li>  									
+									<li><a rel="DAG" id="examplex" href='./pictures/all_wllck_GObp_DAG.png' title="每个节点代表一个GO术语，方框代表的是富集程度TOP10的GO，颜色的深浅代表富集程度，颜色越深就表示富集程度越高，每个节点上展示了该term的名称及富集分析的Corrected p-Value。"><img src='./pictures/all_wllck_GObp_DAG.png' class="smallpic" alt="" description="" /></a></li>  									
+									<li><a rel="DAG" id="examplex" href='./pictures/all_wllck_GOcc_DAG.png' title="每个节点代表一个GO术语，方框代表的是富集程度TOP10的GO，颜色的深浅代表富集程度，颜色越深就表示富集程度越高，每个节点上展示了该term的名称及富集分析的Corrected p-Value。"><img src='./pictures/all_wllck_GOcc_DAG.png' class="smallpic" alt="" description="" /></a></li>  									
+								</ul>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">                           
+                                <p class="p_center"><span id="go002">1</span>/3 GO富集有向无环图</p>
+                            </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 
+                <br>
+                <h3>5.结果目录</h3>
+                <div>
+                    <pre>
+<a href = "../../GO" target="_blank" style="font-size: 12px">GO</a>
+|-- <a href = "../../GO/GO.README.txt" target="_blank" style="font-size: 12px">GO.README.txt</a>
+`-- *_go
+    |-- ALL
+    |   |-- GO*_DAG.png
+    |   |-- go_enrich_result.xls
+    |   `-- *.gobar.png
+    |-- DOWN
+    |   |-- GO*_DAG.png
+    |   |-- go_enrich_result.xls
+    |   `-- *.gobar.png
+    `-- UP
+        |-- GO*_DAG.png
+        |-- go_enrich_result.xls
+        `-- *.gobar.png
+                    </pre>
+                </div> 
+			</div>
+
+
+           
+			<div id="partKEGG" class="r_part_box">
+                <div class="first_title">
+                	<h2><img  src="img/report_01.png" alt="">差异表达基因KEGG富集分析</h2>
+                </div>
+				<p class="indent">KEGG（Kyoto Encyclopedia of Genes and Genomes, <a target='_blank' href='http://www.kegg.jp'>http://www.kegg.jp</a>）是系统分析基因功能、基因组信息数据库，它有助于研究者把基因及表达信息作为一个整体网络进行研究。作为Pathway相关的主要公共数据库(Kanehisa et al., 2008），KEGG提供的整合代谢途径 (pathway)查询十分出色，包括碳水化合物、核苷、氨基酸等的代谢及有机物的生物降解。不仅提供了所有可能的代谢途径，而且对催化各步反应的酶进行了全面的注解，包含有氨基酸序列、PDB库的链接等等，是进行生物体内代谢分析、代谢网络研究的强有力工具。</p>
+                <p class="indent">在生物体内，不同基因相互协调行使其生物学功能，通过Pathway显著性富集能确定差异表达基因参与的最主要生化代谢途径和信号转导途径。Pathway显著性富集分析以KEGG 数据库中Pathway为单位，应用超几何检验，找出与整个转录组背景相比，在差异表达基因中显著性富集的Pathway。</p>
+                <h3>1.差异表达基因KEGG富集列表</h3>
+				<p class="table_title" style="font-weight: bold">差异基因KEGG富集列表如下：</p>
+				<!--这是一个不带排序的表-->
+				<div class="t_bottom_style">
+				<table class="display table_basic">
+					<thead>
+						<tr>
+							<th>Term</th>
+							<th>Database</th>
+							<th>ID</th>
+							<th>Input number</th>
+							<th>Background number</th>
+							<th>P-Value</th>
+							<th>Corrected P-Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Valine, leucine and isoleucine degradation</td>
+							<td>KEGG PATHWAY</td>
+							<td>osa00280</td>
+							<td>13</td>
+							<td>37</td>
+							<td>0.000411263839467</td>
+							<td>0.043182703144</td>
+						</tr>
+						<tr>
+							<td>Glycerolipid metabolism</td>
+							<td>KEGG PATHWAY</td>
+							<td>osa00561</td>
+							<td>13</td>
+							<td>45</td>
+							<td>0.00184354328407</td>
+							<td>0.0735894524023</td>
+						</tr>
+						<tr>
+							<td>Ribosome biogenesis in eukaryotes</td>
+							<td>KEGG PATHWAY</td>
+							<td>osa03008</td>
+							<td>20</td>
+							<td>90</td>
+							<td>0.00210255578292</td>
+							<td>0.0735894524023</td>
+						</tr>
+						<tr>
+							<td>alpha-Linolenic acid metabolism</td>
+							<td>KEGG PATHWAY</td>
+							<td>osa00592</td>
+							<td>9</td>
+							<td>37</td>
+							<td>0.0215464575063</td>
+							<td>0.565594509541</td>
+						</tr>
+						<tr>
+							<td>Porphyrin and chlorophyll metabolism</td>
+							<td>KEGG PATHWAY</td>
+							<td>osa00860</td>
+							<td>8</td>
+							<td>35</td>
+							<td>0.0386177493131</td>
+							<td>0.63628043808</td>
+						</tr>
+						<tr>
+							<td>Non-homologous end-joining</td>
+							<td>KEGG PATHWAY</td>
+							<td>osa03450</td>
+							<td>3</td>
+							<td>7</td>
+							<td>0.0560917061978</td>
+							<td>0.63628043808</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+                <div class="annotation">
+                    <p>①Term: KEGG中通路描述</p>
+                    <p>②Database: 数据库</p>
+                    <p>③ID: KEGG ID</p>
+                    <p>④Input number: 输入基因属于该Term的总数</p>
+                    <p>⑤Background number: 背景基因属于该Term的总数</p>
+                    <p>⑥P-Value: 超几何检验p值</p>
+                    <p>⑦Corrected P-Value: 对多重假设检验校正后的P-Value</p>
+                </div>
+                <br>
+				<h3>2.差异表达基因KEGG富集散点图</h3>
+				<p class="indent">差异表达基因KEGG富集分析结果可以通过散点图进行图形化展示。Rich factor、Qvalue和富集到此通路上的基因个数被用来衡量KEGG富集程度。其中Rich factor指pathway中富集到的差异表达基因数量与注释基因数量的比值。Rich factor值越大，说明富集的程度越大。Qvalue (取值范围0-1) 是通过多重假设检验校正之后的Pvalue，Qvalue的值越接近于零，说明富集越显著。下图展示了20条富集最显著的pathway，若富集的pathway条目不足20条，则全部展示。</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_kegg1" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class="kegg001">
+									<li><a rel="kegg_scatter_region" id="examplex" href='./pictures/all_wllck.kegg_scatter.png' title="纵轴表示pathway名称，横轴表示Rich factor，点的大小表示此pathway中差异表达基因个数多少，而点的颜色对应于不同的Qvalue范围。"><img src='./pictures/all_wllck.kegg_scatter.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="kegg_scatter_region" id="examplex" href='./pictures/up_wllck.kegg_scatter.png' title="纵轴表示pathway名称，横轴表示Rich factor，点的大小表示此pathway中差异表达基因个数多少，而点的颜色对应于不同的Qvalue范围。"><img src='./pictures/up_wllck.kegg_scatter.png' class="smallpic" alt="" description="" /></a></li>        
+									<li><a rel="kegg_scatter_region" id="examplex" href='./pictures/down_wllck.kegg_scatter.png' title="纵轴表示pathway名称，横轴表示Rich factor，点的大小表示此pathway中差异表达基因个数多少，而点的颜色对应于不同的Qvalue范围。"><img src='./pictures/down_wllck.kegg_scatter.png' class="smallpic" alt="" description="" /></a></li>        
+								</ul>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="kegg001">1</span>/3 差异基因KEGG富集散点图</p>
+                            </div>                            
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束-------------------------------------------------> 				
+                <h3>3.KEGG富集通路图</h3>
+				<p class="indent">将差异表达基因标注到通路图中可以方便地查看差异基因在通路图中的分布情况。查看方法见结果目录中的说明文档。</p>
+				<!---滚动图片-------------------------------------------------------------------->        
+				<div class="chartBox">		
+					<div class="custom-container mouseWheelButtons_kegg2" >
+						<div style="margin:0 auto;width:600px;">
+							<a href="#" class="prev">&lsaquo;
+							<!--	<img src="img/left1.png" alt="">  -->
+							</a> 
+							<div class="carousel">
+								<ul class='kegg002'>
+									<li><a rel="kegg_pathway" id="examplex" href='./pictures/osa00660.png' title=""><img src='./pictures/osa00660.png' class="smallpic" alt="" description="" /></a></li>
+									<li><a rel="kegg_pathway" id="examplex" href='./pictures/osa00904.png' title=""><img src='./pictures/osa00904.png' class="smallpic" alt="" description="" /></a></li>
+									<li><a rel="kegg_pathway" id="examplex" href='./pictures/osa00950.png' title=""><img src='./pictures/osa00950.png' class="smallpic" alt="" description="" /></a></li>
+									<li><a rel="kegg_pathway" id="examplex" href='./pictures/osa03030.png' title=""><img src='./pictures/osa03030.png' class="smallpic" alt="" description="" /></a></li>
+									<li><a rel="kegg_pathway" id="examplex" href='./pictures/osa00400.png' title=""><img src='./pictures/osa00400.png' class="smallpic" alt="" description="" /></a></li>
+									<li><a rel="kegg_pathway" id="examplex" href='./pictures/osa03450.png' title=""><img src='./pictures/osa03450.png' class="smallpic" alt="" description="" /></a></li>
+								</ul>
+								<p class="p_center">差异基因KEGG富集散点图</p>
+								<br>
+							</div>
+							<a href="#" class="next">&rsaquo;</a>
+                            <div style="float:left;text-align: center;width:85%">
+                                <p class="p_center"><span id="kegg002">1</span>/6 差异基因KEGG富集通路图</p>
+                            </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<!-----------到此图片结束------------------------------------------------->
+                <br>
+                <h3>5.结果目录</h3>
+                <div>
+                    <pre>
+<a href = "../../KEGG" target="_blank" style="font-size: 12px">KEGG</a>
+|-- <a href = "../../KEGG/KEGG.README.txt" target="_blank" style="font-size: 12px">KEGG.README.txt</a>
+`-- *_kegg
+    |-- ALL
+    |   |-- kegg_enrich_result.xls
+    |   |-- wvsc.kegg_scatter.png
+    |   |-- kegg.html
+    |   `-- detail
+    |-- Down
+    |   |-- kegg_enrich_result.xls
+    |   |-- wvsc.kegg_scatter.png
+    |   |-- kegg.html
+    |   `-- detail
+    `-- UP
+        |-- kegg_enrich_result.xls
+        |-- wvsc.kegg_scatter.png
+        |-- kegg.html
+        `-- detail
+                    </pre>
+                </div>                 
+			</div>	
+
+
+ 
+			<div id="partPPI" class="r_part_box">
+                <div class="first_title">
+                	<h2><img  src="img/report_01.png" alt="">蛋白互作分析</h2>
+                </div>
+				<p class="indent">STRING（<a target='_blank' href='http://string-db.org'>http://string-db.org</a>）是一个强大的蛋白质互作数据库。对于数据库中包含的物种，我们直接将差异表达基因的互作关系从数据库中提取出来构建互作网络。而对于数据库中没有的物种，可以将差异表达基因序列通过blastx与数据库包含的参考物种的蛋白质序列比对，利用比对上的蛋白质互作关系构建互作网络。</p>
+                <p class="indent">将得到的差异表达基因互作网络数据文件导入Cytoscape软件，既可以可视化编辑。Cytoscape软件的使用方法可以查看其使用说明文档。使用Cytoscape软件查看基因互作网络的效果如下：</p>
+				<br />
+                <div class="img_box">
+                    <img class="img-style" width="50%" alt="" src="image/ppi.png">
+                </div>
+                <br>
+                <h3>5.结果目录</h3>
+                <div>
+                    <pre>
+<a href = "../../PPI" target="_blank" style="font-size: 12px">PPI</a>
+|-- <a href = "../../AlternativeSplicing/AlternativeSplicing.README.txt" target="_blank" style="font-size: 12px">PPI.README.txt</a>
+`-- *_ppi
+    |-- ALL
+    |   |-- *.ppi.txt
+    |   |-- blast.out.xls
+    |   `-- filt_blast.out.xls
+    |-- DOWN
+    |   |-- *.ppi.txt
+    |   |-- blast.out.xls
+    |   `-- filt_blast.out.xls
+    `-- UP
+        |-- *.ppi.txt
+        |-- blast.out.xls
+        `-- filt_blast.out.xls
+                    </pre>
+                </div>              
+			</div>
+
+
+            
+                 <div id="partREF" class="r_part_box">
+                 <div class="first_title">
+                         <h2><img  src="img/report_01.png" alt="">参考文献</h2>
+                 </div>
+				<p class='reference'>Anders, S.(2010). HTSeq: Analysing
+					high-throughput sequencing data with Python.(HTSeq)</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Anders, S., and Huber, W. (2010). Differential expression analysis
+					for sequence count data. <b><i>Genome Biol.</i></b>(DESeq)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>Anders, S. and Huber, W. (2012).
+					Differential expression of RNA-Seq data at the gene level-the DESeq
+					package.(DESeq)</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Kanehisa, M., M. Araki, <font><i>et al</i></font>. (2008). KEGG for
+					linking genomes to life and the environment. <b><i>Nucleic
+							acids research.</i></b>(KEGG)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Kim, D., G. Pertea, <font><i>et al</i></font>. (2012).TopHat2:
+					accurate alignment of transcriptomes in the presence of insertions,
+					deletions and gene fusions.(TopHat2)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Langmead, B., Trapnell, C., Pop, M. & Salzberg, S.L. (2009).
+					Ultrafast and memory-efficient alignment of short DNA sequences to
+					the human genome. <b><i>Genome Biol.</i></b>(Bowtie)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Langmead, B. and S. L. Salzberg (2012). Fast gapped-read alignment
+					with Bowtie 2. <b><i>Nature methods.</i></b>(Bowtie 2)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Mao, X., Cai, T., Olyarchuk, J.G., Wei, L. (2005). Automated genome
+					annotation and pathway identification using the KEGG Orthology (KO)
+					as a controlled vocabulary. <b><i>Bioinformatics.</i></b>(KOBAS)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Marioni, J. C., C. E. Mason, <font><i>et al</i></font>. (2008).
+					RNA-seq: an assessment of technical reproducibility and comparison
+					with gene expression arrays. <b><i>Genome research.</i></b>
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>Marquez Y, Brown JW, Simpson C, Barta A,
+					Kalyna M. (2012). Transcriptome survey reveals increased complexity
+					of the alternative splicing landscape in Arabidopsis.</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					McKenna, A, Hanna, M, Banks, E, Sivachenko, A, Cibulskis, K,
+					Kernytsky, A, Garimella, K, Altshuler, D, Gabriel, S, Daly, M,
+					DePristo, MA. 2010. The Genome Analysis Toolkit: a MapReduce
+					framework for analyzing next-generation DNA sequencing data. <b><i>Genome
+							Research.</i></b>(GATK)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Mortazavi, A., B. A. Williams, <font><i>et al</i></font>. (2008).
+					Mapping and quantifying mammalian transcriptomes by RNA-Seq. <b><i>Nature
+							methods.</i></b>
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Robinson, M. D., McCarthy, D. J. & Smyth, G. K. edgeR: a
+					Bioconductor package for differential expression analysis of
+					digital gene expression data. <b><i>Bioinformatics.</i></b>(edgeR)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>Trapnell, C., Pachter, L., and Salzberg,
+					S.L. (2009). TopHat: discovering splice junctions with RNA-Seq.
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Trapnell, C. <font><i>et al</i></font>. (2010).Transcript assembly
+					and quantification by RNA-seq reveals unannotated transcripts and
+					isoform switching during cell differentiation. <b><i>Nat.
+							Biotechnol.</i></b>(Cufflinks)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Trapnell, C., A. Roberts, <font><i>et al</i></font>. (2012).
+					Differential gene and transcript expression analysis of RNA-seq
+					experiments with TopHat and Cufflinks. <b><i>Nature
+							Protocols.</i></b>(Tophat & Cufflinks)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Wang, L.Feng, Z.Wang, X.Zhang, X. (2010). DEGseq: an R package for
+					identifying differentially expressed genes from RNA-seq data. <b><i>Bioinformatics.</i></b>(DEGseq)
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Wang, Z., M. Gerstein, <font><i>et al</i></font>. (2009). RNA-Seq:
+					a revolutionary tool for transcriptomics. <b><i>Nature
+							Reviews Genetics.</i></b>
+				</p>
+				<p class="parahalf">
+				</p>
+				<p class='reference'>
+					Young, M. D., Wakefield, M. J., Smyth, G. K., and Oshlack, A.
+					(2010).Gene ontology analysis for RNA-seq: accounting for selection
+					bias. <b><i>Genome Biology.</i></b>(GOseq)
+				</p>
+			</div>
+
+			
+		</div>
+	</div>
+	</div>
+</div>
+<!--页脚-->
+<div id="footer_style">
+	<footer class="footerstyle">
+		<p>© 2015-2017 拓美科 8omics.com 版权所有 | 咨询热线：010-53659701</p>
+	</footer>
+</div>
+</body>
+</html>

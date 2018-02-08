@@ -1,0 +1,57 @@
+.box_shadow_1 {
+  -webkit-box-shadow: 3px 3px 3px #888;
+  -moz-box-shadow: 3px 3px 3px #888;
+  box-shadow: 3px 3px 3px #888;
+}
+.self_active {
+  background-color: #333;
+}
+/*===============右边主体部分==============*/
+.right {
+  width: 79%;
+  float: right;
+  margin-right: 0px;
+  padding: 0px;
+}
+.right #video_title {
+  height: 80px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 30px;
+  line-height: 80px;
+  letter-spacing: 3px;
+}
+.right p,
+.right a {
+  line-height: 29px;
+  font-size: 16px;
+}
+.right img {
+  width: 100%;
+}
+.right a {
+  text-decoration: none;
+  color: #157bf7;
+  cursor: pointer;
+}
+.right a:hover {
+  text-decoration: none;
+  color: #157bf7;
+  cursor: pointer;
+}
+/*===============快速使用==============*/
+#qa_r_1 {
+  font-size: 21px;
+  padding: 0px;
+  height: 40px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+}
+#qa_r_2 img {
+  width: 100%;
+}
+/*===============模块==============*/
+#nodeDetail img {
+  width: auto;
+  max-width: 100%;
+}
